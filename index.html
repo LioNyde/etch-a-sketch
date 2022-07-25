@@ -15,10 +15,12 @@
    <div id="grid">
       
    </div>
-   <button>Eraser</button>
-   <button>Black</button>
+   <button onclick="changeColor('white')">Eraser</button>
+   <button onclick="changeColor('black')">Black</button>
    <button onclick="clearCanvas()">Clear</button>
+   <button onclick="changeColor('random')">Random</button>
    <input type="color" class="pick" onchange="changeColor(this.value)" placeholder="Select Color">   
    <input class="size" type="range" onchange="changeSize(this.value)" min="2" max="100" value="16">
+   <span class="rangeval">16</span>
 </body>
 </html>
