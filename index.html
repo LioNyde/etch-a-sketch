@@ -19,7 +19,10 @@
    <button onclick="changeColor('black')">Black</button>
    <button onclick="clearCanvas()">Clear</button>
    <button onclick="changeColor('random')">Random</button>
-   <input type="color" class="pick" onchange="changeColor(this.value)" placeholder="Select Color">   
+   <span>Brush Color</span>
+   <input type="color" class="pick" oninput="changeColor(this.value)">   
+   <span>Canvas Color</span>
+   <input type="color" onchange="changeBackground(this.value)" value="#ffffff">
    <input class="size" type="range" onchange="changeSize(this.value)" min="2" max="100" value="16">
    <span class="rangeval">16</span>
 </body>
