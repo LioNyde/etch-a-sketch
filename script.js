@@ -26,5 +26,10 @@ function paint(){this.style.backgroundColor = color}
 //change canvas size
 
 function changeSize(size){
-   
+   fillBoard(size)
+   clearCanvas()
+}
+function clearCanvas() {
+   const box = document.querySelectorAll('div')
+   box.forEach(div => div.style.backgroundColor = 'white')
 }
