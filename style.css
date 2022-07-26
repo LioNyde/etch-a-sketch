@@ -1,21 +1,39 @@
-
 body{
    display: flex;
    justify-content: center;
    align-items: center;
    flex-flow: column wrap;
 }
-
-.box {
-   background: red;
-   height: 50px;
-   width: 50px;
-   
-}
-
 #grid {
    display: grid;
    width: 300px;
    height: 300px;
    border: 2px solid black;
+   margin-bottom: 10px;
+}
+.ui {
+   margin: 10px;
+}
+
+.buttons, .colorpick, .size{
+   margin: 15px;
+}
+
+.buttons > * {
+   background: none;
+   outline: none;
+   border: 2px solid black;
+   border-radius: 10px;
+}
+.buttons > *:focus{
+   border-radius: 0px;
+   border: 2px solid black;
+   background: black;
+   color: white;
+}
+.colorpick, .size {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   gap: 20px;
 }

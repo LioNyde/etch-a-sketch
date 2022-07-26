@@ -1,9 +1,12 @@
 //paint
 
-let color = 'black';
+let color = 'black'
 let bgcolor = 'white'
 
+
+const COLOR = document.querySelector('.color')
 const BOARD = document.querySelector('#grid')
+const rangeval = document.querySelector('.rangeval')
 
 //fill the canvas with pixel divs
 function fillBoard(size){
@@ -23,28 +26,31 @@ fillBoard(16)
 
 //fill and change color
 function changeBackground(bg){bgcolor = bg; clearCanvas()}
-function changeColor(newcolor){
+function changeColor(paint) {
    let r = parseInt(Math.random() * 256)
    let g = parseInt(Math.random() * 256)
    let b = parseInt(Math.random() * 256)
-   color = (newcolor === 'random') ? `rgb(${r}, ${g}, ${b})` : newcolor}
-function paint(){this.style.backgroundColor = color} 
+   
+   if (paint === 'rand') {
+      color = `rgb(${r}, ${g}, ${b})`
+      return
+   }
+   color = paint
+   return
+}
+
+//change the paint color in current color
+function paint(){this.style.background = color;} 
 
 //change canvas size
 function changeSize(size){
    fillBoard(size)
    clearCanvas()
+   rangeval.textContent = size
 }
 
+//clear the canvas and use the current bgcolor
 function clearCanvas() {
-   const box = document.querySelectorAll('div')
+   const box = document.querySelectorAll('#grid > div')
    box.forEach(div => div.style.backgroundColor = bgcolor)
 }
-
-
-//ui
-const range = document.querySelector('.size')
-const rangeVal = document.querySelector('.rangeval')
-
-range.onchange = () => rangeVal.textContent = range.value
-range.ontouchmove = () => rangeVal.textContent = range.value
