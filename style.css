@@ -3,6 +3,7 @@ body{
    justify-content: center;
    align-items: center;
    flex-flow: column wrap;
+   background: #A2E5FF;
 }
 #grid {
    display: grid;
@@ -28,8 +29,8 @@ body{
 .buttons > *:focus{
    border-radius: 0px;
    border: 2px solid black;
-   background: black;
-   color: white;
+   background: #E5FFA2;
+   color: black;
 }
 .colorpick, .size {
    display: flex;
